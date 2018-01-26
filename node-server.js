@@ -14,9 +14,9 @@ var port = 8080;
 var server = http.createServer(function (req, res) {
     res.setHeader('Content-Type', 'text/plain');
     res.setHeader("Access-Control-Allow-Origin", "*");
-    // res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    // res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-    // res.setHeader("X-Powered-By", ' 3.2.1')
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+    res.setHeader("X-Powered-By", ' 3.2.1')
     res.setHeader("Content-Type", "application/json;charset=utf-8");
     // res.writeHead(200, {
     //     'Content-Type': 'text/html; charset=utf8'
