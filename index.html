@@ -21,10 +21,10 @@
     $(function () {
         console.log('this');
         $.ajax({
-            url: "http:127.0.0.1:8080",
-            data:'',
-            type:post,
-            dataType:json,
+            url: "http:127.0.0.1:3000/users/getUserInfo?id=1",
+            data: '',
+            type: 'POST',
+            dataType: 'json',
             success: function (result) {
                 $(".te").html(result);
             }

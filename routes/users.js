@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var URL = require('url');
-// var User = require('user');
+var User = require('./user');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -11,11 +11,12 @@ router.get('/', function (req, res, next) {
 /* GET getUserInfo listing. */
 router.get('/getUserInfo', function (req, res, next) {
 
-  var user = {
-    name: '',
-    city: '',
-    age: '',
-  }
+  var user = new User();
+  // var user = {
+  //   name: '',
+  //   city: '',
+  //   age: '',
+  // }
 
   var params = URL.parse(req.url, true).query;
 
@@ -36,5 +37,15 @@ router.get('/getUserInfo', function (req, res, next) {
   res.send(JSON.stringify(response));
 
 });
+
+router.post('/getUserInfo', function (req, res, next) {
+  // 输出 JSON 格式
+  var response = {
+    city: "北京市",
+    name: "ligh"
+  };
+  console.log(response);
+  res.end(JSON.stringify(response));
+})
 
 module.exports = router;
